@@ -13,8 +13,8 @@ class CharacterController extends Controller
         $data['test'] = '';
         $test = '';
         if(isset($request->name) && $request->name!=''){
-            $data['input'] = $request->name;
-            $word = $request->name;
+            $data['input'] = strtolower($request->name);
+            $word = strtolower($request->name);
             for($x=0;$x<count($request->char_name);$x++){
                 $test .= 'Character '.($x+1).' : '.$request->char_name[$x]. ' Cannot repeat more than : '.$request->char_count[$x]. '</br>';
                 $char_name = $request->char_name[$x];
